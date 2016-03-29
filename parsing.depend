@@ -1,0 +1,93 @@
+# depslib dependency file v1.0
+1446996697 source:c:\users\admin\desktop\parsing v.beta.1.6.0\main.c
+	"project_syn.h"
+
+1447983777 c:\users\admin\desktop\parsing v.beta.1.6.0\project_syn.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	<locale.h>
+	"tree.h"
+	"poltreecreate.h"
+	"dif.h"
+
+1447983552 c:\users\admin\desktop\parsing v.beta.1.6.0\tree.h
+	<stdio.h>
+	"numpars.h"
+
+1447982390 c:\users\admin\desktop\parsing v.beta.1.6.0\poltreecreate.h
+	"numpars.h"
+	"tree.h"
+
+1448258406 c:\users\admin\desktop\parsing v.beta.1.6.0\numpars.h
+	<stdlib.h>
+
+1447977555 c:\users\admin\desktop\parsing v.beta.1.6.0\dif.h
+	"tree.h"
+
+1447983442 source:c:\users\admin\desktop\parsing v.beta.1.6.0\tree.c
+	"tree.h"
+
+1448258339 source:c:\users\admin\desktop\parsing v.beta.1.6.0\numpars.c
+	"numpars.h"
+
+1447983671 source:c:\users\admin\desktop\parsing v.beta.1.6.0\poltreecreate.c
+	"poltreecreate.h"
+
+1447984630 source:c:\users\admin\desktop\parsing v.beta.1.6.0\dif.c
+	"dif.h"
+
+1449694674 source:c:\users\admin\desktop\parsingcpp v.beta.1.6.0\dif.cpp
+	"dif.h"
+
+1449693792 c:\users\admin\desktop\parsingcpp v.beta.1.6.0\dif.h
+	<iostream>
+	<cstring>
+	"tree.h"
+	"global.h"
+
+1449696340 c:\users\admin\desktop\parsingcpp v.beta.1.6.0\tree.h
+	<stdio.h>
+	<iostream>
+	<cstring>
+	<cmath>
+	"numpars.h"
+	"global.h"
+	<cstdlib>
+	<clocale>
+
+1449695998 c:\users\admin\desktop\parsingcpp v.beta.1.6.0\numpars.h
+	<stdlib.h>
+
+1449696207 source:c:\users\admin\desktop\parsingcpp v.beta.1.6.0\main.cpp
+	"project_syn.h"
+	"global.h"
+	<iostream>
+
+1449694482 c:\users\admin\desktop\parsingcpp v.beta.1.6.0\project_syn.h
+	"global.h"
+	"tree.h"
+	"poltreecreate.h"
+	"dif.h"
+
+1449727728 c:\users\admin\desktop\parsingcpp v.beta.1.6.0\poltreecreate.h
+	<cstring>
+	"numpars.h"
+	"tree.h"
+	"global.h"
+
+1449695998 source:c:\users\admin\desktop\parsingcpp v.beta.1.6.0\numpars.cpp
+	"numpars.h"
+
+1449696042 source:c:\users\admin\desktop\parsingcpp v.beta.1.6.0\poltreecreate.cpp
+	"poltreecreate.h"
+
+1449694457 source:c:\users\admin\desktop\parsingcpp v.beta.1.6.0\tree.cpp
+	"tree.h"
+
+1449693856 c:\users\admin\desktop\parsingcpp v.beta.1.6.0\global.h
+
+1449693856 source:c:\users\admin\desktop\parsingcpp v.beta.1.6.0\global.cpp
+	"global.h"
+
