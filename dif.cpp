@@ -289,5 +289,5 @@ MySTree *dif(MySTree *tree,  char *str)
             break;
         }
     }
-    return tree;
+    return Opti(tree);
 }

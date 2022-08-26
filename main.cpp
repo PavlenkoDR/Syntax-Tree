@@ -13,9 +13,10 @@ int main()
     inibFunc();
     iniuFunc();
     PrintAllVoc();
-    char *a = new char[1000];
+    char *a = new char[BUFF_SIZE];
     MySTree *tmpt = NULL, *tmpt1 = NULL;
-    gets((char*)a);
+    std::cin.getline(a, BUFF_SIZE);
+    std::string aBase(a);
     //ap = "log10(x*x)";
     char what[BUFF_SIZE];
     if (Parsing(&a) == 0)
@@ -24,9 +25,10 @@ int main()
         PolskiKurwa();
         tmpt = TreeCreator();
         //valadd();
-        //printf("%lf\n", SolveTree(phead->pTree));
+        printf("%lf\n", SolveTree(tmpt));
         printf("По какой переменной?\n> ");
-        gets(what);
+        std::cin.getline(what, BUFF_SIZE);
+        printf("\n%s = %s\n", aBase.c_str(), printTree(Opti(tmpt)));
         printf("(%s)' = ", printTree(tmpt));
         tmpt1 = dif(tmpt, what);
         printf("%s\n", printTree(tmpt1));

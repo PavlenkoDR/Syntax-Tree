@@ -1,6 +1,6 @@
 #include "numpars.h"
 
-const static  char NumState[7][6] =
+const static char NumState[7][6] =
 {
     {
         0, 1, 8, 8, 7, 7
@@ -24,6 +24,10 @@ const static  char NumState[7][6] =
         6, 6, 8, 8, 7, 7
     }
 };
+
+int getNumState(int numParsState, NumTypeID numType) {
+    return NumState[numParsState][(int)numType];
+}
 
 int RNum( char **str)
 {
@@ -94,6 +98,10 @@ t_NumFunc NumFunc[7][6] =
     }
 };
 
+t_NumFunc getFunc(int numParsState, NumTypeID numType) {
+    return NumFunc[numParsState][(int)numType];
+}
+
 double NumPars(char **str)
 {
     nummantis = 0;
@@ -101,33 +109,34 @@ double NumPars(char **str)
     numexpsign = 0;
     numexptmp = 0;
     t_NumFunc func;
-    int state2[256], state1 = 0;
-    int i;
-    for (i = 0; i < 256; i++)
-        state2[i] = 5;
-    state2['0'] = 0;
-    for (i = '1'; i<= '9'; i++)
-        state2[i] = 1;
-    state2['.'] = 2;
-    state2[','] = 2;
-    state2['e'] = 3;
-    state2['+'] = 4;
-    state2['-'] = 4;
-    state2[0] = 5;
+    NumTypeID numSymbolType[256];
+    int state1 = 0;
+    for (int i = 0; i < 256; i++)
+        numSymbolType[i] = NumTypeID::ERROR;
+    numSymbolType['0'] = NumTypeID::ZERO;
+    for (int i = '1'; i<= '9'; i++)
+        numSymbolType[i] = NumTypeID::NUMBER;
+    numSymbolType['.'] = NumTypeID::DOT;
+    numSymbolType[','] = NumTypeID::DOT;
+    numSymbolType['e'] = NumTypeID::EXPONENT;
+    numSymbolType['+'] = NumTypeID::SIGN;
+    numSymbolType['-'] = NumTypeID::SIGN;
+    numSymbolType[0] = NumTypeID::ERROR;
     while (1)
     {
-        func = *NumFunc[state1][state2[(int)**str]];
-        state1 = NumState[state1][state2[(int)**str]];
+        auto tmp = **str;
+        func = getFunc(state1, numSymbolType[(int)**str]);
+        state1 = getNumState(state1, numSymbolType[(int)**str]);
         if (func(str) != 0)
             break;
     }
-    for (i = 0; i < numexptmp; i++)
+    for (int i = 0; i < numexptmp; i++)
         nummantis /= 10;
     if (numexpsign == 0)
-        for (i = 0; i < numexp; i++)
+        for (int i = 0; i < numexp; i++)
             nummantis *= 10;
     else
-        for (i = 0; i < numexp; i++)
+        for (int i = 0; i < numexp; i++)
             nummantis /= 10;
     return nummantis;
 }

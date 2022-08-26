@@ -23,7 +23,7 @@ private:
         int id;
     } vocabulary;
 public:
-    char *vocstr[100];
+    const char *vocstr[100];
     vocabulary *_myvoc;
     int sizevoc;
     voc_func();

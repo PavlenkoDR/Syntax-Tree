@@ -6,6 +6,27 @@
     Парсинг числа
 */
 
+enum class NumTypeID : int {
+    ZERO = 0,
+    NUMBER = 1,
+    DOT = 2,
+    EXPONENT = 3,
+    SIGN = 4,
+    ERROR = 5
+};
+
+enum class NumParsStateID {
+    SKIP = 0,
+    NUMBER_WHOLE = 1,
+    DOT = 2,
+    NUMBER_FRACTION = 3,
+    EXPONENT = 4,
+    EXPONENT_SIGN = 5,
+    NUMBER_EXPONENT = 6,
+    END = 7,
+    ERROR = 8,
+};
+
 static double nummantis;
 static double numexp;
 static double numexptmp;

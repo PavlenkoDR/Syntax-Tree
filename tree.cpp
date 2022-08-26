@@ -1,5 +1,7 @@
 #include "tree.h"
 
+#pragma warning(disable : 4996)
+
 voc_func myvoc;
 extern priora priority;
 t_LeafCreate LeafCreate[4];
